@@ -32,6 +32,8 @@ window.Router = (function () {
     window.addEventListener('page:' + page, fn);
   }
 
+  /* Страница видима только с классом .on — его надо ставить в обоих режимах:
+     в собранном файле первой из нескольких, в обычном — единственной. */
   if (pages.length) {
     pages.forEach((p, i) => p.classList.toggle('on', i === 0));
   }

@@ -54,6 +54,11 @@ function check(name, cond) {
   if (!cond) fails++;
 }
 
+/* ---------- 0. роутер показывает страницу ---------- */
+console.log('\nРОУТЕР');
+check('единственная страница получает класс .on', pageNode._cls.has('on'));
+check('в многостраничном режиме роутер не считает себя одностраничным', Router.single === false);
+
 /* ---------- 1. игра доходит до конца без падений ---------- */
 function play(night, diff, policy) {
   Game.start(night, diff, night);
