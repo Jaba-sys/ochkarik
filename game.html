@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ОЧКАРИК · ночь</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main data-page="game" class="pg-game">
+
+  <div class="room">
+    <div class="doorway">
+      <div class="hall"><img class="silh" id="silh" src="assets/ochkarik.png" alt=""></div>
+      <div class="door" id="door"></div>
+    </div>
+    <div class="slit" id="slitEl"></div>
+    <div class="window"><span></span><span></span></div>
+    <div class="blanket"></div>
+  </div>
+
+  <div class="hud">
+    <div class="col">
+      <div class="clock" id="clock">00:00</div>
+      <div class="nightlbl">НОЧЬ <span id="nightN">1</span> · <span id="diffLbl">БЕССОННИЦА</span></div>
+    </div>
+    <div class="bars">
+      <div class="bar"><b>СОН</b><i id="barSleep"></i></div>
+      <div class="bar"><b>ПАНИКА</b><i id="barPanic"></i></div>
+      <div class="bar"><b>БАТАРЕЯ</b><i id="barBatt"></i></div>
+    </div>
+  </div>
+
+  <button class="menu-btn" id="menuBtn">ПАУЗА<small>ESC</small></button>
+
+  <div class="cue" id="cue"></div>
+
+  <div class="phone" id="phone">
+    <div class="phone-body">
+      <div class="urlbar"><span class="lock"></span><span class="u">nightwatch-tracker.app/live/ochkarik</span></div>
+      <div class="app">
+        <div class="app-top"><span>ТРЕКЕР</span><span class="live">В ЭФИРЕ</span></div>
+        <div class="target">
+          <img src="assets/ochkarik.png" alt="">
+          <div><div class="tname">ОЧКАРИК</div><div class="tsub" id="tsub">В ПУТИ</div></div>
+        </div>
+        <div class="dist" id="distEl">— <small>М</small></div>
+        <div class="track" id="trackEl"><i id="trackDot"></i></div>
+        <div class="tlabels"><span>ТВОЙ ДОМ</span><span>ГОРОД</span></div>
+        <div class="batt"><span id="battTxt">БАТАРЕЯ 100%</span><span id="phClock">03:12</span></div>
+      </div>
+      <div class="app dead">
+        <div class="noise"></div>
+        <p>СИГНАЛ ПОТЕРЯН<br><small>телефон разряжен — слушай</small></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lids" id="lids"></div>
+  <div class="dream" id="dream"><span>СОН</span></div>
+  <button class="wake" id="wakeBtn">ПРОСНУТЬСЯ<small>пробел или клик</small></button>
+  <div class="red" id="red"></div>
+  <div class="new-ach" id="newAch"><small>ДОСТИЖЕНИЕ</small><div id="newAchName"></div></div>
+
+  <div class="controls">
+    <button class="ctl" id="cSleep"><span>Спать</span><kbd>ПРОБЕЛ</kbd></button>
+    <button class="ctl" id="cPhone"><span>Телефон</span><kbd>E</kbd></button>
+    <button class="ctl" id="cDoor"><span>Дверь</span><kbd>Q</kbd></button>
+  </div>
+
+  <div class="scare" id="scare"><img src="assets/ochkarik.png" alt=""></div>
+
+  <!-- пауза -->
+  <div class="sheet mini" id="pauseSheet">
+    <div class="sheet-h"><h2>ПАУЗА</h2><span class="eyebrow">ОН ЖДЁТ</span></div>
+    <p class="why">Ночь остановлена. Если выйти в меню, эта ночь не засчитается.</p>
+    <div class="sheet-btns">
+      <button class="btn primary" id="pauseResume">Продолжить</button>
+      <button class="btn" id="pauseAgain">Начать ночь заново</button>
+      <button class="btn" data-go="menu">Выйти в меню</button>
+    </div>
+  </div>
+
+  <!-- итог -->
+  <div class="sheet" id="result">
+    <div class="sheet-h"><h2 id="resTitle">6:00</h2><span class="eyebrow" id="resNight">НОЧЬ 1</span></div>
+    <p class="why" id="resWhy"></p>
+    <div class="stats" id="resStats"></div>
+    <div class="sheet-btns">
+      <button class="btn primary" id="resNext">Дальше</button>
+      <button class="btn" id="resRetry">Переиграть ночь</button>
+      <button class="btn" data-go="menu">Выйти в меню</button>
+    </div>
+  </div>
+
+</main>
+
+<script src="js/router.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/guard.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/difficulty.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/boot.js"></script>
+</body>
+</html>

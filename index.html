@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ОЧКАРИК</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main data-page="menu" class="pg-menu">
+  <img class="face-menu" src="assets/ochkarik.png" alt="">
+  <h1>ОЧКА<span>РИК</span></h1>
+  <p class="tag">Он идёт к тебе через весь город. У тебя есть кровать, дверь, телефон на последнем издыхании — и очень мало сна.</p>
+
+  <div class="diff">
+    <button class="dbtn" data-diff="easy"><b>Полусон</b><span>он медленный, паника прощает</span></button>
+    <button class="dbtn on" data-diff="normal"><b>Бессонница</b><span>как задумано</span></button>
+    <button class="dbtn" data-diff="nightmare"><b>Кошмар</b><span>быстрый, врёт, почти не даёт времени</span></button>
+  </div>
+
+  <div class="menu-btns">
+    <button class="btn primary" data-go="start">Начать ночь 1</button>
+    <button class="btn" data-go="cont" id="contBtn" hidden>Продолжить с ночи <span id="contN">2</span></button>
+    <a class="btn" href="help.html" data-go="help">Как играть</a>
+    <a class="btn" href="achievements.html" data-go="ach">Достижения <span id="achCount">0/16</span></a>
+  </div>
+
+  <p class="best" id="bestTxt">Пройдено ночей: 0</p>
+  <p class="tamper" id="tamper" hidden>Сохранение не сошлось с подписью — достижения сброшены.</p>
+  <div class="menu-slit"></div>
+</main>
+
+<script src="js/router.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/guard.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/boot.js"></script>
+</body>
+</html>
