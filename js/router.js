@@ -32,7 +32,7 @@ window.Router = (function () {
     window.addEventListener('page:' + page, fn);
   }
 
-  if (single) {
+  if (pages.length) {
     pages.forEach((p, i) => p.classList.toggle('on', i === 0));
   }
 
